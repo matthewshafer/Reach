@@ -1,0 +1,3 @@
+[submodule "server/private/externals/BreakItDown"]
+	path = server/private/externals/BreakItDown
+	url = https://github.com/matthewshafer/BreakItDown.git
