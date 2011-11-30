@@ -1,6 +1,15 @@
 <?php
 namespace net\matthewshafer\Reach;
 
+/**
+ * ReachClient class.
+ * 
+ * Construct a ReachClient object to be able to contact a Reach server
+ * to check for updates.
+ *
+ * @author Matthew Shafer <matthewshafer@niftystopwatch.com>
+ * 
+ */
 class ReachClient
 {
 	private $appVersion;
@@ -9,7 +18,17 @@ class ReachClient
 	private $versionData = null;
 	private $apiVersion = 1;
 	
-	public __construct($appVersion, $appName, $reachUrl)
+	/**
+	 * __construct function.
+	 * 
+	 * description
+	 *
+	 * @access public
+	 * @param string $appVersion
+	 * @param string $appName
+	 * @param string $reachUrl
+	 */
+	public function __construct($appVersion, $appName, $reachUrl)
 	{
 		$this->appVersion = $appVersion;
 		$this->appName = $appName;
@@ -21,7 +40,7 @@ class ReachClient
 	
 	}
 	
-	public function sendStatistics()
+	public function sendStatistics(ReachStastics $stats)
 	{
 	
 	}

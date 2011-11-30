@@ -55,9 +55,35 @@ class ReachStastics
 	
 	public function encodeStastics()
 	{
-		// should add some encoding options to json_encode.  Possibly the one for big integers to strings
-		// also need to check for json encoding errors
-		return json_encode($this->internalArray);
+		$return = json_encode($this->internalArray);
+		$lastError = json_last_error();
+		
+		if(!($lastError !== JSON_ERROR_NONE))
+		{
+			switch($lastError)
+			{
+				case JSON_ERROR_DEPTH:
+				
+				break;
+				case JSON_ERROR_STATE_MISMATCH:
+				
+				break;
+				case JSON_ERROR_CTRL_CHAR:
+				
+				break;
+				case JSON_ERROR_SYNTAX:
+				
+				break;
+				case JSON_ERROR_UTF8:
+				
+				break;
+				default:
+				
+				break;
+			}
+		}
+		
+		return $return;
 	}
 }
 ?>

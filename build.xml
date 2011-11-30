@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Reach" default="all">
+
+	<target name="cleanUp">
+		<delete dir="build"/>
+	</target>
+	
+	<target name="serverDocumentation">
+		<copy todir="build/serverDocSource">
+			<fileset dir="server">
+				<include name="**/*.php"/>
+				<exclude name="config.php"/>
+				<exclude name="private/themes/"/>
+				<exclude name="private/themesAdmin/"/>
+			</fileset>
+		</copy>
+		
+		<phpdoc title="Reach Server Documentation" destdir="build/serverDocumentation" sourcecode="false" undocumentedelements="true" output="HTML:Smarty:PHP">
+			<fileset dir="build/serverDocSource">
+				<include name="**/*.php"/>
+			</fileset>
+			
+			<projdocfileset dir="build/serverDocSource">
+				<include name="README"/>
+			</projdocfileset>
+		</phpdoc>
+		
+		<delete dir="build/serverDocSource"/>
+	</target>
+
+</project>
